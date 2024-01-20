@@ -9,6 +9,7 @@ var currentQuestionObj;
 var timeRemaining = 60;
 var interval;
 var scores;
+var scoreReset = document.querySelector('#reset');
 //Array for questions to be asked with multiple choice options, the correct answer, and an explanation of the correct answer
 var questions = [ 
     {
@@ -57,8 +58,6 @@ var questions = [
 
 //Navigate back and forth between the quiz page and the high scores page when clicking on the div with the id of hiscore
 highScores.addEventListener('click', function() {
-    window.location.href='high-scores.html';
-
     if (window.location.href.includes('high-scores.html')) {
         window.location.href = 'index.html';
     } else {
@@ -202,17 +201,22 @@ function endGame() {
 //Function to display high scores to the Leaderboard
 document.addEventListener('DOMContentLoaded', function() {
     var highScoresList = document.getElementById('high-scores-list');
-    console.log('High Scores List:', highScoresList);
     //Retrieve the scores from local storage
     scores = JSON.parse(localStorage.getItem('scores')) || [];
+
+    //Hide certain content depending on which page you're viewing
+    if (window.location.href.includes ('high-scores.html')) {
+        quizContainer.style.display = 'none';
+        startQuiz.style.display = 'none';
+    } else {
+        highScoresList.style.display = 'none';
+        scoreReset.style.display = 'none';
+    }
+
     //Create an li for each score and append it to the leaderboard
-    if (highScoresList) {
     scores.forEach(function (score) {
         var listItem = document.createElement('li');
         listItem.textContent = score.initials + ': ' + score.score;
         highScoresList.appendChild(listItem);
     });
-    } else {
-        console.error('high-scores-list not found');
-    }
 });
