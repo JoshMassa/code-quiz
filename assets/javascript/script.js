@@ -173,7 +173,7 @@ function endGame() {
         //Create and display a submit form for the user to enter their initials and submit their score
         var submitForm = document.createElement('form');
         submitForm.innerHTML = `
-            <label for="initials">Enter Your Initials:</label>
+            <label id="score-label" for="initials">Enter Your Initials:</label>
             <input type="text" id="initials" name="initials" required>
             <button type="submit">Submit Score</button>
             `;

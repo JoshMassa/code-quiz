@@ -66,7 +66,8 @@
     box-shadow: 0 0 10px rgba(255, 88, 116);
 }
 
-#start-button:hover {
+#start-button:hover,
+form button:hover {
     background-color: lightblue;
     color: white;
     box-shadow: none;
@@ -100,4 +101,33 @@ input {
 label {
     font-size: 20px;
     line-height: 2;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+form button {
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-shadow:1px 1px 3px var(--pink);
+    box-shadow: 0 0 10px rgba(255, 88, 116);
+    margin-top: 20px;
+}
+
+#initials {
+    max-width: 150px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+form button,
+#initials,
+#score-label {
+    margin-left: -100px;
 }
