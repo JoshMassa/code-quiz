@@ -3,13 +3,16 @@ var startQuiz = document.querySelector('#start-button');
 var quizContainer = document.querySelector('#quiz-container');
 var questionsContainer = document.querySelector('#questions-container');
 var timerDiv = document.querySelector('#timer');
+var scoreContainer = document.querySelector('#high-scores-container');
 var currentQuestion = 0;
 var currentQuestionObj;
 var timeRemaining = 60;
+var interval;
+var scores;
 //Array for questions to be asked with multiple choice options, the correct answer, and an explanation of the correct answer
 var questions = [ 
     {
-        question: 'What does the "typeof" operator return when used with a variable declared using let?',
+        question: 'What does the "typeof" operator return when used with a variable declared using "let"?',
         options: ['A. "number"', 'B. "undefined"', 'C. "string"', 'D. "object"'], correctIndex: 2, 
         showAlert: function() {
             alert('Incorrect! The "typeof" operator in JavaScript returns a string that represents the data type of the operand. When used with a variable declared using "let", it will return the type of the variable. So, the "typeof" operator returns a string indicating the data type of the variable, whether it is a number, string, boolean, object, etc.');
@@ -39,7 +42,7 @@ var questions = [
         options: ['A. Returns a string representation of the parsed integer', 'B. Parses a string and returns a boolean', 'C. Parses a string and returns a float', 'D. Parses a string and returns an integer'],
         correctIndex: 3,
         showAlert: function() {
-            alert('Incorrect! The function takes two arguments: the string to be parsed and the radix, which specifies the numeral system to be used. The radix can be any integer between 2 and 36.')
+            alert('Incorrect! The function takes two arguments: the string to be parsed and the radix, which specifies the numeral system to be used. The radix can be any integer between 2 and 36. The result returned is an integer.')
         }
     },
 
@@ -86,7 +89,7 @@ questionsContainer.addEventListener('change', function (event) {
 
 //Function to load and display the questions in the questions container
 function showNextQuestion() {
-    if (currentQuestion < questions.length) {
+    if (currentQuestion < questions.length && timeRemaining > 0) {
         // Get the current question object
         currentQuestionObj = questions[currentQuestion];
         // Create a div for the question text
@@ -113,6 +116,9 @@ function showNextQuestion() {
         // Append the questionDiv to the questionsContainer
         questionsContainer.innerHTML = '';
         questionsContainer.appendChild(questionDiv);
+    } else {
+        clearInterval(interval);
+        endGame();
     }
 }
 
@@ -136,14 +142,13 @@ function checkAnswer(chosenAnswerIndex, correctAnswerIndex) {
     }
     // Increment to the next question
     currentQuestion++;
-    // Display next question
-    showNextQuestion();
 }
 
 //Function to create a timer
 function startTimer() {
-    var interval = setInterval(function () {
-        timerDiv.textContent = 'Time Remaining: ' + timeRemaining + ' seconds';
+        interval = setInterval(function () {
+        //Display Remaining Time
+        timerDiv.textContent = 'Time Remaining: ' + timeRemaining + ' Seconds';
         //Check Remaining Time
         if (timeRemaining <= 0) {
             clearInterval(interval);
@@ -154,6 +159,60 @@ function startTimer() {
             timeRemaining--;
         }
     }, 1000);
-    //Display time remaining
-    timerDiv.textContent = 'Time Remaining: ' + timeRemaining + ' seconds';
 }
+
+//Function to end the game and allow users to submit their score
+function endGame() {
+    //Check if all questions are answered or if time as run out
+    if (currentQuestion >= questions.length || timeRemaining <= 0) {
+        //Hide the quiz container
+        questionsContainer.style.display = "none";
+        //Show the high scores container
+        scoreContainer.style.display = 'block';
+        //Calculate score based on time remaining
+        var quizScore = timeRemaining;
+        //Create and display a submit form for the user to enter their initials and submit their score
+        var submitForm = document.createElement('form');
+        submitForm.innerHTML = `
+            <label for="initials">Enter Your Initials:</label>
+            <input type="text" id="initials" name="initials" required>
+            <button type="submit">Submit Score</button>
+            `;
+        //Display the submit form
+        scoreContainer.appendChild(submitForm);
+        //Event listener for the form submission
+        submitForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            var initialsInput = document.getElementById('initials');
+            var userInitials = initialsInput.value;
+        //Retrieve existing scores from local storage
+        scores = JSON.parse(localStorage.getItem('scores')) || [];
+        //Add current user's score to the leaderboard
+        scores.push({ initials: userInitials, score: quizScore });
+        //Display scores in descending order
+        scores.sort((a, b) => b.score - a.score);
+        //Store scores in local storage
+        localStorage.setItem('scores', JSON.stringify(scores));
+        //Show Leaderboard
+        window.location.href = 'high-scores.html';
+        });
+    }
+}
+
+//Function to display high scores to the Leaderboard
+document.addEventListener('DOMContentLoaded', function() {
+    var highScoresList = document.getElementById('high-scores-list');
+    console.log('High Scores List:', highScoresList);
+    //Retrieve the scores from local storage
+    scores = JSON.parse(localStorage.getItem('scores')) || [];
+    //Create an li for each score and append it to the leaderboard
+    if (highScoresList) {
+    scores.forEach(function (score) {
+        var listItem = document.createElement('li');
+        listItem.textContent = score.initials + ': ' + score.score;
+        highScoresList.appendChild(listItem);
+    });
+    } else {
+        console.error('high-scores-list not found');
+    }
+});
