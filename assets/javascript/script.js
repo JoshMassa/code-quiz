@@ -107,14 +107,15 @@ function showNextQuestion() {
             radioInput.name = 'option';
             radioInput.value = index;
             optionLabel.appendChild(radioInput);
-            optionLabel.innerHTML += option;
+            var optionText = document.createTextNode(option);
+            optionLabel.appendChild(optionText);
             // Append the label to the container
             optionContainer.appendChild(optionLabel);
             // Append the container to the questionDiv
             questionDiv.appendChild(optionContainer);
         });
         // Append the questionDiv to the questionsContainer
-        questionsContainer.innerHTML = '';
+        questionsContainer.textContent = '';
         questionsContainer.appendChild(questionDiv);
     } else {
         clearInterval(interval);
@@ -171,11 +172,27 @@ function endGame() {
         var quizScore = timeRemaining;
         //Create and display a submit form for the user to enter their initials and submit their score
         var submitForm = document.createElement('form');
-        submitForm.innerHTML = `
-            <label id="score-label" for="initials">Enter Your Initials:</label>
-            <input type="text" id="initials" name="initials" required>
-            <button type="submit">Submit Score</button>
-            `;
+
+        // Create label for initials
+        var initialsLabel = document.createElement('label');
+        initialsLabel.setAttribute('for', 'initials');
+        initialsLabel.textContent = 'Enter Your Initials:';
+        submitForm.appendChild(initialsLabel);
+
+        // Create input for initials
+        var initialsInput = document.createElement('input');
+        initialsInput.type = 'text';
+        initialsInput.id = 'initials';
+        initialsInput.name = 'initials';
+        initialsInput.required = true;
+        submitForm.appendChild(initialsInput);
+
+        // Create submit button
+        var submitButton = document.createElement('button');
+        submitButton.type = 'submit';
+        submitButton.textContent = 'Submit Score';
+        submitForm.appendChild(submitButton);
+        
         //Display the submit form
         scoreContainer.appendChild(submitForm);
         //Event listener for the form submission
@@ -225,7 +242,7 @@ function resetScores() {
     //Clear data from local storage
     localStorage.removeItem('scores');
     //Clear text from leaderboard
-    highScoresList.innerHTML = '';
+    highScoresList.textContent = '';
 }
 
 scoreReset.addEventListener('click', function() {

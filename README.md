@@ -1,99 +1,63 @@
-# 04 Web APIs: Code Quiz
+# Code Quiz
 
-## Your Task
+## Overview
+I created this portfolio as a way to showcase my experience, projects, and skills. My portfolio provides potential employers, collaborators, and clients a visually appealing and interactive way to explore my work and learn more about me.
 
-At some point in your journey to become a full-stack web developer, you’ll likely be asked to complete a coding assessment&mdash;perhaps as part of an interview process. A typical coding assessment includes both multiple-choice questions and interactive coding challenges. 
+## Features
 
-To help familiarize you with these tests and allow you to use the skills covered in this module, this Challenge invites you to build a timed coding quiz with multiple-choice questions. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean, polished, and responsive user interface. 
+1. Responsive Design
 
-This week’s coursework will equip you with all the skills you need to succeed in this assignment.
+I designed my webpage to be fully responsive from the smallest mobile devices, to tablets, to the largest desktops to provide a consistent means to view my portfolio in an enjoyable and engaging experience.
 
-## User Story
+2. Navigation Menu
 
-```
-AS A coding boot camp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
-```
+At the top right of the page, you will find a hamburger style navigation menu that will take you directly to the specified sections of my portfolio, as well as links to both my GitHub and LinkedIn profiles to obtain a better understanding of my professional journey.
 
-## Acceptance Criteria
+3. Showcase of Recent Projects
 
-```
-GIVEN I am taking a code quiz
-WHEN I click the start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and my score
-```
+In this portfolio, I have included a showcase of my most recent projects for potential employers, collaborators, and clients to be able to gauge the scope of my work. This includes a titled image of the project that, when clicked on, will take you to the deployed project's webpage.
 
-## Mock-Up
+4. Experience
 
-The following animation demonstrates the application functionality:
+I have included a section listing the technologies that I currently specialize in, with more to come as I progress in my career as a Web Developer. This section helps provide a way to quickly identify my areas of expertise.
 
-![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](./Assets/04-web-apis-homework-demo.gif)
+5. About Me
 
-## Grading Requirements
+This contains a brief description of my history to allow visitors a glimpse into my professional career and what drives me to do what I do.
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
+6. Contact Information
 
-This Challenge is graded based on the following criteria: 
+I have provided a contact form at the bottom of the page as an easy way for potential employers, collaborators, and clients to reach out with any and all questions.
 
-### Technical Acceptance Criteria: 40%
+7. Technologies Used
 
-* Satisfies all of the preceding acceptance criteria.
+HTML5
+CSS
+JavaScript
+VSCode
+GitBash
 
-### Deployment: 32%
+## Usage
+To view this webpage, please visit https://joshmassa.github.io/code-quiz/
 
-* Application deployed at live URL.
+To view this projects repository, please visit https://github.com/JoshMassa/code-quiz
 
-* Application loads with no errors.
+When viewed from a desktop, the webpage should resemble the following image:
 
-* Application GitHub URL submitted.
+![Desktop View](./assets/images/desktop%20view.png)
 
-* GitHub repository contains application code.
+When viewed from a tablet, the webpage should resemble the following image:
 
-### Application Quality: 15%
+![Tablet View](./assets/images/tablet%20view.png)
 
-* Application user experience is intuitive and easy to navigate.
+When viewed from a mobile device, the webpage should resemble the following image:
 
-* Application user interface style is clean and polished.
+![Mobile View](./assets/images/mobile%20view.png)
 
-* Application resembles the mock-up functionality provided in the Challenge instructions.
+Credits
+This project brought to you in part by UCLA Extension and it's staff including but not limited to: Our class instructor and teaching assistant of UCLA Extension Coding Bootcamp 2023-2024.
 
-### Repository Quality: 13%
 
-* Repository has a unique name.
 
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
-
----
-
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+License
+This project does not contain a license.

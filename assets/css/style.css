@@ -107,7 +107,7 @@ form button {
 
 form button,
 #initials,
-#score-label {
+form label {
     margin-left: -100px;
 }
 
@@ -168,5 +168,10 @@ label {
 
     #high-scores-container {
         margin-left: 25vw;
+    }
+
+    form button {
+        margin-top: 5px;
+        margin-right: 5px;
     }
 }
