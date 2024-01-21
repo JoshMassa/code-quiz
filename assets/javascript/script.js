@@ -10,6 +10,7 @@ var timeRemaining = 60;
 var interval;
 var scores;
 var scoreReset = document.querySelector('#reset');
+var highScoresList = document.querySelector('#high-scores-list');
 //Array for questions to be asked with multiple choice options, the correct answer, and an explanation of the correct answer
 var questions = [ 
     {
@@ -129,10 +130,8 @@ function checkAnswer(chosenAnswerIndex, correctAnswerIndex) {
     if (chosenAnswerIndex === correctAnswerIndex) {
         //Alert for a correct answer
         alert('Correct!');
-        console.log('Correct!');
     } else {
         // Alert for incorrect answer
-        console.log('Wrong!');
         if (currentQuestionObj.showAlert) {
             currentQuestionObj.showAlert();
         }
@@ -152,7 +151,7 @@ function startTimer() {
         if (timeRemaining <= 0) {
             clearInterval(interval);
             alert("Time's Up!");
-            console.log("Time's Up!");
+            endGame();
         //Decrement time if time still remaining
         } else {
             timeRemaining--;
@@ -220,3 +219,15 @@ document.addEventListener('DOMContentLoaded', function() {
         highScoresList.appendChild(listItem);
     });
 });
+
+//Function to reset the leaderboard when "Reset Scores" button is clicked
+function resetScores() {
+    //Clear data from local storage
+    localStorage.removeItem('scores');
+    //Clear text from leaderboard
+    highScoresList.innerHTML = '';
+}
+
+scoreReset.addEventListener('click', function() {
+    resetScores();
+})

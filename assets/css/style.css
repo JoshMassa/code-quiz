@@ -95,7 +95,8 @@ label {
 }
 
 input {
-    margin-right: 5px; 
+    margin-right: 5px;
+    cursor: pointer;
 }
 
 label {

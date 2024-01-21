@@ -20,11 +20,35 @@
 #hiscore {
     font-size: 20px;
     cursor: pointer;
+    animation: breathe 2s infinite;
+}
+
+#hiscore:hover {
+    animation: none;
+}
+
+#reset {
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 10px black;
+    margin-top: 30px;
+    margin-left: -15px;
+    background-color: lightgrey;
+}
+
+#reset:hover {
+    background-color: darkgray;
 }
 
 #score-container {
     flex-direction: column;
     align-items: center;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: lightslategrey;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 75px black;
 }
 
 /* ***************** */
@@ -36,4 +60,26 @@
 }
 h1 {
     font-size: 45px;
+    color: rgb(228, 108, 128);
+    text-shadow:1px 1px 3px black;
+}
+
+li {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+
+
+@keyframes breathe {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
