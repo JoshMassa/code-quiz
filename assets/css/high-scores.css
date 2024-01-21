@@ -36,6 +36,8 @@
     margin-top: 30px;
     margin-left: -15px;
     background-color: lightgrey;
+    width: 100px;
+    height: 50px;
 }
 
 #reset:hover {
@@ -56,10 +58,6 @@
 /* ***************** */
 /* Element Selectors */
 /* ***************** */
-#reset {
-    width: 100px;
-    height: 50px;
-}
 h1 {
     font-size: 45px;
     color: rgb(228, 108, 128);
@@ -72,8 +70,9 @@ li {
     font-weight: 900;
 }
 
-
-
+/* ***************** */
+/*     Keyframes     */
+/* ***************** */
 @keyframes breathe {
     0% {
         transform: scale(1);
@@ -83,5 +82,27 @@ li {
     }
     100% {
         transform: scale(1);
+    }
+}
+
+/* ***************** */
+/*   Media Queries   */
+/* ***************** */
+@media screen and (min-width: 320px) and (max-width: 425px) {
+    #score-container {
+        box-shadow: 0 0 40px black;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    li {
+        font-size: 16px;
+    }
+
+    #reset {
+        height: 35px;
+        box-shadow: 0 0 20px black;
     }
 }

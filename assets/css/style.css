@@ -35,6 +35,12 @@
     color: rgb(175, 101, 114);
 }
 
+#initials {
+    max-width: 150px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
 #quiz-container,
 #questions-container {
     display: flex;
@@ -82,6 +88,29 @@ form button:hover {
 /* ***************** */
 /* Element Selectors */
 /* ***************** */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+form button {
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-shadow:1px 1px 3px var(--pink);
+    box-shadow: 0 0 10px rgba(255, 88, 116);
+    margin-top: 20px;
+}
+
+form button,
+#initials,
+#score-label {
+    margin-left: -100px;
+}
+
 h1 {
     margin-top: 50px;
     text-align: center;
@@ -104,31 +133,40 @@ label {
     line-height: 2;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 100px;
-}
+/* ***************** */
+/*   Media Queries   */
+/* ***************** */
+@media screen and (min-width: 320px) and (max-width: 425px) {
+    h1,
+    #questions-container p {
+        font-size: 20px;
+        margin: 0;
+    }
 
-form button {
-    width: 100px;
-    height: 30px;
-    border-radius: 10px;
-    cursor: pointer;
-    text-shadow:1px 1px 3px var(--pink);
-    box-shadow: 0 0 10px rgba(255, 88, 116);
-    margin-top: 20px;
-}
+    #hiscore,
+    #timer {
+        font-size: 16px;
+    }
 
-#initials {
-    max-width: 150px;
-    margin-bottom: 10px;
-    text-align: center;
-}
+    #quiz-container {
+        margin-top: 10px;
+    }
 
-form button,
-#initials,
-#score-label {
-    margin-left: -100px;
+    #quiz-container p,
+    #questions-container label {
+        font-size: 12px;
+    }
+
+    #questions-container label {
+        margin-top: 10px;
+        margin-left: -10px;
+    }
+
+    #questions-container {
+        margin-top: 40px;
+    }
+
+    #high-scores-container {
+        margin-left: 25vw;
+    }
 }
