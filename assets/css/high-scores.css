@@ -21,6 +21,8 @@
     font-size: 20px;
     cursor: pointer;
     animation: breathe 2s infinite;
+    max-width: 200px;
+    margin: 40px auto;
 }
 
 #hiscore:hover {
