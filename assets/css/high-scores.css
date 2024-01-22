@@ -52,7 +52,7 @@
     background-color: lightslategrey;
     width: 300px;
     border-radius: 10px;
-    box-shadow: 0 0 75px black;
+    box-shadow: 0 0 30px black;
 }
 
 /* ***************** */
@@ -94,7 +94,7 @@ li {
 /* ***************** */
 @media screen and (min-width: 320px) and (max-width: 425px) {
     #score-container {
-        box-shadow: 0 0 40px black;
+        box-shadow: 0 0 20px black;
     }
 
     h1 {
