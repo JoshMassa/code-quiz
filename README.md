@@ -57,5 +57,5 @@ https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 
-License
+## License
 This project does not contain a license.
