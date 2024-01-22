@@ -1,3 +1,4 @@
+//Global Variables
 var highScores = document.querySelector('#hiscore');
 var startQuiz = document.querySelector('#start-button');
 var quizContainer = document.querySelector('#quiz-container');
@@ -172,13 +173,11 @@ function endGame() {
         var quizScore = timeRemaining;
         //Create and display a submit form for the user to enter their initials and submit their score
         var submitForm = document.createElement('form');
-
         // Create label for initials
         var initialsLabel = document.createElement('label');
         initialsLabel.setAttribute('for', 'initials');
         initialsLabel.textContent = 'Enter Your Initials:';
         submitForm.appendChild(initialsLabel);
-
         // Create input for initials
         var initialsInput = document.createElement('input');
         initialsInput.type = 'text';
@@ -186,13 +185,11 @@ function endGame() {
         initialsInput.name = 'initials';
         initialsInput.required = true;
         submitForm.appendChild(initialsInput);
-
         // Create submit button
         var submitButton = document.createElement('button');
         submitButton.type = 'submit';
         submitButton.textContent = 'Submit Score';
         submitForm.appendChild(submitButton);
-        
         //Display the submit form
         scoreContainer.appendChild(submitForm);
         //Event listener for the form submission

@@ -58,6 +58,10 @@
 /* ***************** */
 /* Element Selectors */
 /* ***************** */
+footer {
+    text-align: center;
+}
+
 h1 {
     font-size: 45px;
     color: rgb(228, 108, 128);

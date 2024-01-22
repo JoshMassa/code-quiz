@@ -1,35 +1,27 @@
 # Code Quiz
 
 ## Overview
-I created this portfolio as a way to showcase my experience, projects, and skills. My portfolio provides potential employers, collaborators, and clients a visually appealing and interactive way to explore my work and learn more about me.
+I created this code quiz to showcase my development with JavaScript. This project helped me further my skills with writing functions as well as using different JavaScript methods. More than 60% of the code to run this game is executed through JavaScript.
 
 ## Features
 
 1. Responsive Design
 
-I designed my webpage to be fully responsive from the smallest mobile devices, to tablets, to the largest desktops to provide a consistent means to view my portfolio in an enjoyable and engaging experience.
+I designed my webpage to be fully responsive from the smallest mobile devices, to tablets, to the largest desktops to provide a consistent means to view my code quiz in an enjoyable and engaging experience.
 
 2. Navigation Menu
 
-At the top right of the page, you will find a hamburger style navigation menu that will take you directly to the specified sections of my portfolio, as well as links to both my GitHub and LinkedIn profiles to obtain a better understanding of my professional journey.
+At the top left of the page, you will see the text "View High Scores". When clicked on, this will navigate you to the Leaderboard that displays your locally stored scores.
 
-3. Showcase of Recent Projects
+3. Timer
 
-In this portfolio, I have included a showcase of my most recent projects for potential employers, collaborators, and clients to be able to gauge the scope of my work. This includes a titled image of the project that, when clicked on, will take you to the deployed project's webpage.
+At the top right of the page, you will notice a timer indicated by the text "Time Remaining: 60 seconds". Please refer to quiz intructions for further information.
 
-4. Experience
+4. Quiz Instructions
 
-I have included a section listing the technologies that I currently specialize in, with more to come as I progress in my career as a Web Developer. This section helps provide a way to quickly identify my areas of expertise.
+In the center of the page, you will see a welcome message, followed by the instructions for how the quiz works. You will start with 60 seconds on your timer, that will decrement by 1 second with each second that passes, or by 10 seconds each time you answer a question incorrectly. Your score is based on your time remaining after answering all of the questions (or once the timer reaches 0). The faster you answer all the questions correctly, the higher your score.
 
-5. About Me
-
-This contains a brief description of my history to allow visitors a glimpse into my professional career and what drives me to do what I do.
-
-6. Contact Information
-
-I have provided a contact form at the bottom of the page as an easy way for potential employers, collaborators, and clients to reach out with any and all questions.
-
-7. Technologies Used
+5. Technologies Used
 
 HTML5
 CSS
@@ -55,9 +47,15 @@ When viewed from a mobile device, the webpage should resemble the following imag
 ![Mobile View](./assets/images/mobile%20view.png)
 
 Credits
-This project brought to you in part by UCLA Extension and it's staff including but not limited to: Our class instructor and teaching assistant of UCLA Extension Coding Bootcamp 2023-2024.
+This project brought to you in part by UCLA Extension and its staff including but not limited to: Our class instructor and teaching assistant of UCLA Extension Coding Bootcamp 2023-2024.
 
+Links to resource references used as follows:
 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#instance_methods
+
+https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#event_delegation
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 
 License
 This project does not contain a license.

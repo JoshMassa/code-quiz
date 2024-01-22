@@ -14,6 +14,10 @@
 /* ************ */
 /* ID Selectors */
 /* ************ */
+body {
+    min-width: 320px;
+}
+
 #header-container {
     display: flex;
     justify-content: space-around;
@@ -88,11 +92,15 @@ form button:hover {
 /* ***************** */
 /* Element Selectors */
 /* ***************** */
+footer {
+    text-align: center;
+}
+
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px;
+    margin: 100px 0;
 }
 
 form button {
@@ -108,7 +116,7 @@ form button {
 form button,
 #initials,
 form label {
-    margin-left: -100px;
+    margin-left: -10px;
 }
 
 h1 {
@@ -173,5 +181,9 @@ label {
     form button {
         margin-top: 5px;
         margin-right: 5px;
+    }
+
+    form {
+        margin-left: -80px;
     }
 }
