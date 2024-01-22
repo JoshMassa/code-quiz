@@ -46,7 +46,7 @@ When viewed from a mobile device, the webpage should resemble the following imag
 
 ![Mobile View](./assets/images/mobile%20view.png)
 
-Credits
+## Credits
 This project brought to you in part by UCLA Extension and its staff including but not limited to: Our class instructor and teaching assistant of UCLA Extension Coding Bootcamp 2023-2024.
 
 Links to resource references used as follows:
