@@ -23,11 +23,11 @@ In the center of the page, you will see a welcome message, followed by the instr
 
 5. Technologies Used
 
-HTML5
-CSS
-JavaScript
-VSCode
-GitBash
+* HTML5
+* CSS
+* JavaScript
+* VSCode
+* GitBash
 
 ## Usage
 To view this webpage, please visit https://joshmassa.github.io/code-quiz/
